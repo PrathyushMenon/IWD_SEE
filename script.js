@@ -12,14 +12,14 @@ function addRecommendation() {
     recommendationElement.innerHTML = `<span>&#8220;</span>${recommendation}<span>&#8221;</span> - ${name}`;
 
     // Add the new recommendation to the container
-    var recommendationsContainer = document.getElementById("all_recommendations");
+    var recommendationsContainer = document.getElementById(
+      "all_recommendations"
+    );
     recommendationsContainer.appendChild(recommendationElement);
 
     // Reset the input fields
     nameInput.value = "";
     recommendationInput.value = "";
-
-    // Optionally, you can provide feedback or hide the form
     showPopup(true);
   }
 }
@@ -71,7 +71,8 @@ function scrollAnimations() {
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
@@ -109,4 +110,4 @@ skillCards.forEach(function (card) {
   card.addEventListener("mouseout", function () {
     card.classList.remove("skill-hover");
   });
-}); 
+});
